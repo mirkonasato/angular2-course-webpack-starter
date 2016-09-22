@@ -3,5 +3,8 @@
     "target": "es5",
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true
+  },
+  "angularCompilerOptions": {
+    "skipMetadataEmit": true
   }
 }
