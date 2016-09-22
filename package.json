@@ -1,6 +1,6 @@
 {
   "name": "angular2-starter",
-  "version": "0.1.5",
+  "version": "0.2.0",
   "scripts": {
     "build": "webpack --progress",
     "build:prod": "cross-env APP_ENVIRONMENT=production webpack -p --progress",
@@ -8,24 +8,25 @@
     "serve": "webpack-dev-server --inline --progress"
   },
   "dependencies": {
-    "@angular/common": "2.0.0-rc.5",
-    "@angular/compiler": "2.0.0-rc.5",
-    "@angular/core": "2.0.0-rc.5",
-    "@angular/http": "2.0.0-rc.5",
-    "@angular/platform-browser": "2.0.0-rc.5",
-    "@angular/platform-browser-dynamic": "2.0.0-rc.5",
+    "@angular/common": "2.0.0",
+    "@angular/compiler": "2.0.0",
+    "@angular/core": "2.0.0",
+    "@angular/http": "2.0.0",
+    "@angular/platform-browser": "2.0.0",
+    "@angular/platform-browser-dynamic": "2.0.0",
+    "@angular/router": "3.0.0",
     "core-js": "2.4.1",
-    "rxjs": "5.0.0-beta.6",
-    "zone.js": "0.6.12"
+    "rxjs": "5.0.0-beta.12",
+    "zone.js": "0.6.25"
   },
   "devDependencies": {
-    "cross-env": "2.0.0",
+    "cross-env": "2.0.1",
     "html-webpack-plugin": "2.22.0",
     "raw-loader": "0.5.1",
     "ts-loader": "0.8.2",
     "typescript": "1.8.10",
-    "typings": "1.3.2",
-    "webpack": "1.13.1",
-    "webpack-dev-server": "1.14.1"
+    "typings": "1.3.3",
+    "webpack": "1.13.2",
+    "webpack-dev-server": "1.16.1"
   }
 }
