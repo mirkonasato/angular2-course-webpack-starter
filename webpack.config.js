@@ -3,10 +3,17 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
 
-  entry: './src/main.ts',
+  entry: {
+    'app': './src/main.ts',
+    'polyfills': [
+      'core-js/es6',
+      'core-js/es7/reflect',
+      'zone.js/dist/zone'
+    ]
+  },
   output: {
     path: './dist',
-    filename: 'app.[hash].js'
+    filename: '[name].[hash].js'
   },
   module: {
     loaders: [
@@ -19,6 +26,9 @@ module.exports = {
     extensions: ['', '.js', '.ts', '.html', '.css']
   },
   plugins: [
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'polyfills'
+    }),
     new HtmlWebpackPlugin({
       template: './src/index.html'
     }),
