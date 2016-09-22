@@ -12,7 +12,7 @@ module.exports = {
     ]
   },
   output: {
-    path: './dist',
+    path: __dirname + '/dist',
     filename: '[name].[hash].js'
   },
   module: {
@@ -23,9 +23,14 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['', '.js', '.ts', '.html', '.css']
+    extensions: ['.js', '.ts', '.html', '.css']
   },
   plugins: [
+    // see https://github.com/angular/angular/issues/11580
+    new webpack.ContextReplacementPlugin(
+      /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
+      './src'
+    ),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'polyfills'
     }),
