@@ -1,10 +1,15 @@
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
+var appEntry = './src/main.ts';
+if (process.env.APP_ENVIRONMENT === 'production') {
+  appEntry = './src/main-aot.ts';
+}
+
 module.exports = {
 
   entry: {
-    'app': './src/main.ts',
+    'app': appEntry,
     'polyfills': [
       'core-js/es6',
       'core-js/es7/reflect',

@@ -3,7 +3,7 @@
   "version": "0.2.0",
   "scripts": {
     "build": "webpack --progress",
-    "build:prod": "cross-env APP_ENVIRONMENT=production webpack -p --progress",
+    "build:prod": "npm run codegen && cross-env APP_ENVIRONMENT=production webpack -p --progress",
     "codegen": "ngc && rimraf src/*.js src/**/*.js",
     "postinstall": "typings install",
     "serve": "webpack-dev-server --inline --progress"
