@@ -4,6 +4,7 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true
   },
+  "compileOnSave": false,
   "angularCompilerOptions": {
     "skipMetadataEmit": true
   }
