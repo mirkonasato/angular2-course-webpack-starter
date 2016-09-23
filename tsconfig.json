@@ -3,5 +3,6 @@
     "target": "es5",
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true
-  }
+  },
+  "compileOnSave": false
 }
