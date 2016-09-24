@@ -1,6 +1,6 @@
 {
   "name": "angular2-starter",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "scripts": {
     "build": "webpack --progress",
     "build:prod": "cross-env APP_ENVIRONMENT=production webpack -p --progress",
@@ -8,13 +8,14 @@
     "serve": "webpack-dev-server --inline --progress"
   },
   "dependencies": {
-    "@angular/common": "2.0.0",
-    "@angular/compiler": "2.0.0",
-    "@angular/core": "2.0.0",
-    "@angular/http": "2.0.0",
-    "@angular/platform-browser": "2.0.0",
-    "@angular/platform-browser-dynamic": "2.0.0",
-    "@angular/router": "3.0.0",
+    "@angular/common": "2.0.1",
+    "@angular/compiler": "2.0.1",
+    "@angular/core": "2.0.1",
+    "@angular/forms": "2.0.1",
+    "@angular/http": "2.0.1",
+    "@angular/platform-browser": "2.0.1",
+    "@angular/platform-browser-dynamic": "2.0.1",
+    "@angular/router": "3.0.1",
     "bootstrap": "3.3.7",
     "core-js": "2.4.1",
     "rxjs": "5.0.0-beta.12",
@@ -22,7 +23,7 @@
   },
   "devDependencies": {
     "angular2-template-loader": "0.5.0",
-    "cross-env": "2.0.1",
+    "cross-env": "3.0.0",
     "css-loader": "0.25.0",
     "extract-text-webpack-plugin": "1.0.1",
     "file-loader": "0.9.0",
