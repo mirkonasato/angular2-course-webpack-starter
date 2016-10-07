@@ -1,6 +1,11 @@
 {
   "name": "angular2-starter",
-  "version": "0.2.1",
+  "version": "0.2.2",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mirkonasato/angular2-course-webpack-starter.git"
+  },
   "scripts": {
     "build": "webpack --progress",
     "build:prod": "npm run codegen && cross-env APP_ENVIRONMENT=production webpack -p --progress",
@@ -9,23 +14,23 @@
     "serve": "webpack-dev-server --inline --progress"
   },
   "dependencies": {
-    "@angular/common": "2.0.1",
-    "@angular/compiler": "2.0.1",
-    "@angular/compiler-cli": "0.6.3",
-    "@angular/core": "2.0.1",
-    "@angular/forms": "2.0.1",
-    "@angular/http": "2.0.1",
-    "@angular/platform-browser": "2.0.1",
-    "@angular/platform-browser-dynamic": "2.0.1",
-    "@angular/platform-server": "2.0.1",
-    "@angular/router": "3.0.1",
+    "@angular/common": "2.0.2",
+    "@angular/compiler": "2.0.2",
+    "@angular/compiler-cli": "0.6.4",
+    "@angular/core": "2.0.2",
+    "@angular/forms": "2.0.2",
+    "@angular/http": "2.0.2",
+    "@angular/platform-browser": "2.0.2",
+    "@angular/platform-browser-dynamic": "2.0.2",
+    "@angular/platform-server": "2.0.2",
+    "@angular/router": "3.0.2",
     "core-js": "2.4.1",
     "rxjs": "5.0.0-beta.12",
     "zone.js": "0.6.25"
   },
   "devDependencies": {
     "angular2-template-loader": "0.5.0",
-    "cross-env": "3.0.0",
+    "cross-env": "3.1.1",
     "html-webpack-plugin": "2.22.0",
     "raw-loader": "0.5.1",
     "rimraf": "2.5.4",
@@ -33,6 +38,6 @@
     "typescript": "2.0.3",
     "typings": "1.4.0",
     "webpack": "2.1.0-beta.25",
-    "webpack-dev-server": "2.1.0-beta.5"
+    "webpack-dev-server": "2.1.0-beta.8"
   }
 }
