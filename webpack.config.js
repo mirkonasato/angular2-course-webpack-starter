@@ -1,15 +1,14 @@
 var webpack = require('webpack');
+var ngToolsWebpack = require('@ngtools/webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
-var appEntry = './src/main.ts';
-if (process.env.APP_ENVIRONMENT === 'production') {
-  appEntry = './src/main-aot.ts';
-}
+var appEnvironment = process.env.APP_ENVIRONMENT || 'development';
+var isProduction = appEnvironment === 'production'; 
 
-module.exports = {
+var webpackConfig = {
 
   entry: {
-    'app': appEntry,
+    'app': './src/main.ts',
     'polyfills': [
       'core-js/es6',
       'core-js/es7/reflect',
@@ -22,14 +21,13 @@ module.exports = {
   },
   module: {
     loaders: [
-      {test: /\.component.ts$/, loader: 'ts!angular2-template'},
-      {test: /\.ts$/, exclude: /\.component.ts$/, loader: 'ts'},
-      {test: /\.html$/, loader: 'raw'},
-      {test: /\.css$/, loader: 'raw'}
+      { test: /\.ts$/, loader: isProduction ? '@ngtools/webpack' : 'ts!angular2-template' },
+      { test: /\.html$/, loader: 'raw' },
+      { test: /\.css$/, loader: 'raw' }
     ]
   },
   resolve: {
-    extensions: ['.js', '.ts', '.html', '.css']
+    extensions: [ '.js', '.ts', '.html', '.css' ]
   },
   plugins: [
     // see https://github.com/angular/angular/issues/11580
@@ -45,9 +43,18 @@ module.exports = {
     }),
     new webpack.DefinePlugin({
       app: {
-        environment: JSON.stringify(process.env.APP_ENVIRONMENT || 'development')
+        environment: JSON.stringify(appEnvironment)
       }
     })
   ]
   
 };
+
+if (isProduction) {
+  webpackConfig.plugins.push(new ngToolsWebpack.AotPlugin({
+    tsConfigPath: './tsconfig.json',
+    entryModule: './src/app/app.module#AppModule'
+  }));
+}
+
+module.exports = webpackConfig;
