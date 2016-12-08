@@ -21,9 +21,9 @@ var webpackConfig = {
   },
   module: {
     loaders: [
-      { test: /\.ts$/, loader: isProduction ? '@ngtools/webpack' : 'ts!angular2-template' },
-      { test: /\.html$/, loader: 'raw' },
-      { test: /\.css$/, loader: 'raw' }
+      { test: /\.ts$/, loader: isProduction ? '@ngtools/webpack' : ['ts-loader', 'angular2-template-loader'] },
+      { test: /\.html$/, loader: 'raw-loader' },
+      { test: /\.css$/, loader: 'raw-loader' }
     ]
   },
   resolve: {
